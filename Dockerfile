@@ -4,9 +4,10 @@ FROM golang:alpine AS builder
 WORKDIR /app
 
 # Set environment variables for build
+ARG TARGETARCH
 ENV CGO_ENABLED=0
 ENV GOOS=linux
-ENV GOARCH=amd64
+ENV GOARCH=${TARGETARCH}
 
 # Copy go mod files
 COPY go.mod go.sum ./

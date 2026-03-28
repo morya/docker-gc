@@ -85,6 +85,7 @@ go build -o docker-gc-cron ./cmd/docker-gc-cron
 - CGO_ENABLED=0 for static binary
 - Small final image size
 - Includes docker-cli for Docker operations
+- Multi-architecture support: amd64 and arm64
 
 ## GitHub Actions
 
