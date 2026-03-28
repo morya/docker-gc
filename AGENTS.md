@@ -72,6 +72,15 @@ go fmt ./...
 gofmt -d .
 ```
 
+### 导入格式化 (必需)
+```bash
+# 使用 goimports-reviser 格式化导入，按公司前缀分组
+goimports-reviser -company-prefixes git.gouboyun.tv --format ./...
+
+# 整理 go.mod 文件依赖
+go mod tidy
+```
+
 ### Go Vet（静态分析）
 ```bash
 # 运行 go vet 进行静态分析
