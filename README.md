@@ -1,4 +1,4 @@
-# Docker GC Cron (Golang Implementation)
+# Docker GC (Golang Implementation)
 
 A Docker image that allows scheduled cleanup of unused Docker images, containers, and volumes, implemented in Golang.
 
@@ -30,13 +30,13 @@ A Docker image that allows scheduled cleanup of unused Docker images, containers
 # Run with default settings (daily at midnight)
 docker run -d \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  docker-gc-cron:latest
+  ghcr.io/morya/docker-gc:latest
 
 # Run with custom schedule (every 6 hours)
 docker run -d \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -e CRON="0 */6 * * *" \
-  docker-gc-cron:latest
+  ghcr.io/morya/docker-gc:latest
 
 # Run with force removal and volume cleanup
 docker run -d \
@@ -44,29 +44,29 @@ docker run -d \
   -e FORCE_CONTAINER_REMOVAL=1 \
   -e FORCE_IMAGE_REMOVAL=1 \
   -e CLEAN_UP_VOLUMES=1 \
-  docker-gc-cron:latest
+  ghcr.io/morya/docker-gc:latest
 
 # Dry run mode (test without actual removal)
 docker run -d \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -e DRY_RUN=1 \
-  docker-gc-cron:latest
+  ghcr.io/morya/docker-gc:latest
 ```
 
 ## Building from Source
 
 ```bash
 # Clone the repository
-git clone https://github.com/clockworksoul/docker-gc-cron.git
-cd docker-gc-cron
+git clone https://github.com/morya/docker-gc.git
+cd docker-gc
 
 # Build the Docker image
-docker build -t docker-gc-cron:latest .
+docker build -t ghcr.io/morya/docker-gc:latest .
 
 # Run locally
 docker run -d \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  docker-gc-cron:latest
+  ghcr.io/morya/docker-gc:latest
 ```
 
 ## Development

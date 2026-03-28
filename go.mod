@@ -1,4 +1,4 @@
-module github.com/clockworksoul/docker-gc-cron
+module github.com/morya/docker-gc
 
 go 1.21
 
